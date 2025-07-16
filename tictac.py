@@ -16,7 +16,6 @@ def play_game():
             board = prompt_player_turn(board)
         else:
             board = prompt_computer_turn(board)
-            # pass
         someone_won = check_for_win(board)
         if turn == 8:
             print("Draw. Nobody won.")
@@ -58,7 +57,7 @@ def prompt_player_turn(board):
     x = ""
     y = ""
     while good_move == False:
-        xy = input("Player turn (x,y): ")
+        xy = input("Player turn: (column,row): ")
         print("")
         if re.fullmatch(r'\d+,\d+?', xy):
             xy = xy.split(",")
@@ -96,7 +95,6 @@ def prompt_computer_turn(board):
             return board
         else:
             pass
-            # print("Computer tried an existing position. It will try again")
     print()
 
 def check_for_win(board):
